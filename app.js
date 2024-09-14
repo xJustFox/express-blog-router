@@ -2,14 +2,14 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const posts = require('./controllers/posts.js');
+const postsRouter = require('./routers/posts.js');
 
+// generic middleware
 app.use(express.static('public'));
 app.use(express.json());
 
-app.get('/', (req, res) => res.send('<h1>Benvenuto nel mio blog!</h1>'));
+app.get('/', (req, res) => res.send('<h1>Benvenuto nel mio blog!</h1> <a href="/posts">posts</a>'));
 
-app.get('/posts', posts.index);
-app.post('/posts', posts.create);
+app.use('/posts', postsRouter);
 
 app.listen(port, () => console.log(`Example app listening on http://localhost:${port}`));
