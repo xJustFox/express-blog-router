@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require('express');
 const app = express();
 const port = 3000;
@@ -8,7 +9,7 @@ const postsRouter = require('./routers/posts.js');
 app.use(express.static('public'));
 app.use(express.json());
 
-app.get('/', (req, res) => res.send('<h1>Benvenuto nel mio blog!</h1> <a href="/posts">posts</a>'));
+app.get('/', (req, res) => res.sendFile( path.join(__dirname,'./index.html')));
 
 app.use('/posts', postsRouter);
 
