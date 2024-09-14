@@ -1,0 +1,21 @@
+{
+  "name": "express-blog-intro",
+  "version": "1.0.0",
+  "description": "Creiamo il nostro blog personale e giorno dopo giorno lo potremo arricchire con nuove funzionalità.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "nodemonConfig": {
+    "ignore": "/db"
+  }
+}

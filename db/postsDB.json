@@ -1,0 +1,68 @@
+[
+    {
+        "title": "I Benefici della Meditazione",
+        "content": "La meditazione offre numerosi benefici per la mente e il corpo, come riduzione dello stress e miglioramento della concentrazione.",
+        "img": "meditazione.jpg",
+        "tags": [
+            "benessere",
+            "meditazione",
+            "salute",
+            "equilibrio"
+        ]
+    },
+    {
+        "title": "Come Creare un Giardino Sostenibile",
+        "content": "Scopri come creare un giardino ecologico e sostenibile utilizzando tecniche di permacultura e piante autoctone.",
+        "img": "giardino_sostenibile.jpg",
+        "tags": [
+            "giardinaggio",
+            "sostenibilità",
+            "ambiente",
+            "ecologia"
+        ]
+    },
+    {
+        "title": "10 Libri che Ti Cambieranno la Vita",
+        "content": "Ecco una lista di 10 libri che possono ispirarti e offrirti nuovi punti di vista su vari aspetti della vita.",
+        "img": "libri_cambiavita.jpg",
+        "tags": [
+            "libri",
+            "ispirazione",
+            "crescita personale",
+            "lettura"
+        ]
+    },
+    {
+        "title": "Viaggiare in Islanda: Una Guida Completa",
+        "content": "Tutto quello che devi sapere per organizzare il tuo viaggio in Islanda, tra paesaggi mozzafiato e avventure indimenticabili.",
+        "img": "islanda.jpg",
+        "tags": [
+            "viaggi",
+            "Islanda",
+            "natura",
+            "avventura"
+        ]
+    },
+    {
+        "title": "Alimentazione Vegana: Pro e Contro",
+        "content": "Analisi dettagliata dei benefici e delle sfide di una dieta vegana per chi vuole abbracciare uno stile di vita più etico e salutare.",
+        "img": "alimentazione_vegana.jpg",
+        "tags": [
+            "alimentazione",
+            "vegano",
+            "salute",
+            "dieta"
+        ]
+    },
+    {
+        "title": "L'Importanza del Sonno per il Benessere",
+        "content": "Un sonno di qualità è fondamentale per il benessere fisico e mentale. Scopri come migliorare la qualità del tuo riposo.",
+        "img": "sonno_benessere.jpg",
+        "tags": [
+            "sonno",
+            "salute",
+            "benessere",
+            "riposo"
+        ]
+    }
+]
