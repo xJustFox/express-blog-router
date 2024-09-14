@@ -1,3 +1,4 @@
+const path = require('path');
 const { readJSON, writeJSON } = require('../utils.js');
 const posts = readJSON('postsDB')
 
@@ -12,7 +13,7 @@ module.exports = {
                                 <h1>${title}</h1>
                                 <img style="width: 20%;" src="${img}" alt="">
                                 <ul style="display: flex; list-style: none outside none; margin: 0; padding: 0;">
-                                    ${tags.map(tag => `<li style="margin-right: 5px;">#${tag.toLowerCase().replaceAll(' ', '-' )}</li>`).join(' ')}
+                                    ${tags.map(tag => `<li style="margin-right: 5px;">#${tag.toLowerCase().replaceAll(' ', '-')}</li>`).join(' ')}
                                 </ul>
                                 <p>${content}</p>
                             </article>`
@@ -28,13 +29,31 @@ module.exports = {
             }
         })
     },
-    create: (req, res) => {
-        try {
-            writeJSON('postsDB', [...posts, req.body]);
-            res.send('Post caricato correttamente');
-        } catch (error) {
-            res.send(error);
+    show: (req, res) => {
+        const foundPosts = posts.find(post => post.slug === req.params.slug);
+        if (foundPosts) {
+            res.json(foundPosts);
+        } else {
+            res.status(404).json({
+                error: "Not Found",
+                description: `Post whit slug: ${req.params.slug} not exist`
+            })
         }
+    },
+    create: (req, res) => {
+        res.format({
+            'text/html': () => {
+                try {
+                    // writeJSON('postsDB', [...posts, req.body]);
+                    res.send('<h1>Post loaded successfully</h1>');
+                } catch (error) {
+                    res.status(500).send('Error writing to database');
+                }
+            },
 
-    }
+            default: () => {
+                res.status(406).send('Not Acceptable')
+            }
+        })
+    },
 }
