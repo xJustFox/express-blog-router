@@ -40,6 +40,26 @@ module.exports = {
             })
         }
     },
+    downloadImage: (req, res) => {
+        const foundPosts = posts.find(post => post.slug === req.params.slug)
+
+        if (foundPosts) {
+            if (foundPosts.img != "") {
+                const filePath = path.join(__dirname, `../public/${foundPosts.img}`)            
+                res.download(filePath);
+            } else {
+                res.status(404).json({
+                    error: "Not Found",
+                    description: `Image not found`
+                })
+            }
+        } else {
+            res.status(404).json({
+                error: "Not Found",
+                description: `Post whit slug: ${req.params.slug} not exist`
+            })
+        }
+    },
     create: (req, res) => {
         res.format({
             'text/html': () => {
